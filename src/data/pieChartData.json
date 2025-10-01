@@ -1,0 +1,11 @@
+{
+  "title": "Distribuição por Categorias",
+  "data": [
+    { "x": "Categoria A", "y": 35 },
+    { "x": "Categoria B", "y": 25 },
+    { "x": "Categoria C", "y": 20 },
+    { "x": "Categoria D", "y": 15 },
+    { "x": "Categoria E", "y": 5 }
+  ]
+}
+
