@@ -51,40 +51,42 @@ function Simulator() {
           <div className="control-box">
             <h2 className="box-title">🛍️ Simulador de Compras</h2>
 
-            <div className="form-group">
-              <label htmlFor="product">Produto</label>
-              <select 
-                id="product"
-                value={selectedProduct}
-                onChange={(e) => setSelectedProduct(e.target.value)}
-                className="form-select"
-              >
-                {salesData.map(item => (
-                  <option key={item.x} value={item.x}>
-                    {item.x}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <div className="control-row">
+              <div className="form-group">
+                <label htmlFor="product">Produto</label>
+                <select 
+                  id="product"
+                  value={selectedProduct}
+                  onChange={(e) => setSelectedProduct(e.target.value)}
+                  className="form-select"
+                >
+                  {salesData.map(item => (
+                    <option key={item.x} value={item.x}>
+                      {item.x}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            <div className="button-group">
-              <button 
-                onClick={handlePurchase}
-                className="purchase-btn"
-              >
-                🛒 Adicionar +1
-              </button>
+              <div className="button-group">
+                <button 
+                  onClick={handlePurchase}
+                  className="purchase-btn"
+                >
+                  🛒 Adicionar +1
+                </button>
 
-              <button 
-                onClick={handleReset}
-                className="reset-btn"
-              >
-                🔄 Resetar
-              </button>
+                <button 
+                  onClick={handleReset}
+                  className="reset-btn"
+                >
+                  🔄 Resetar
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="json-box">
+          <div className="json-box json-box-desktop">
             <h2 className="box-title">📄 Dados (JSON)</h2>
             <pre className="json-display">
               {JSON.stringify({ data: salesData }, null, 2)}
@@ -136,6 +138,13 @@ function Simulator() {
                 />
               </VictoryChart>
             </div>
+          </div>
+
+          <div className="json-box json-box-mobile">
+            <h2 className="box-title">📄 Dados (JSON)</h2>
+            <pre className="json-display">
+              {JSON.stringify({ data: salesData }, null, 2)}
+            </pre>
           </div>
         </div>
       </div>

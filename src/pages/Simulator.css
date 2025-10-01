@@ -49,6 +49,14 @@
   min-height: 0;
 }
 
+.json-box-mobile {
+  display: none;
+}
+
+.json-box-desktop {
+  display: block;
+}
+
 .box-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -99,6 +107,13 @@
 
 .form-input[type="number"] {
   appearance: textfield;
+}
+
+.control-row {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .button-group {
@@ -212,29 +227,105 @@
 @media (max-width: 768px) {
   .simulator-container {
     padding: 0 10px;
-    height: auto;
-    min-height: calc(100vh - 200px);
+    height: calc(100vh - 160px);
+    flex-direction: column;
+    overflow-y: auto;
   }
 
   .left-panel {
     flex-direction: column;
     height: auto;
+    width: 100%;
+    gap: 0.75rem;
+    order: 1;
   }
 
-  .control-box,
-  .json-box {
+  .right-panel {
+    width: 100%;
+    height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    order: 2;
+    min-height: 0;
+  }
+
+  .control-box {
     width: 100%;
     max-height: none;
+    min-height: auto;
+    padding: 0.75rem;
+    order: 1;
   }
 
-  .control-box,
-  .json-box,
+  .json-box-desktop {
+    display: none;
+  }
+
+  .json-box-mobile {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    min-height: 150px;
+    max-height: 250px;
+    overflow: auto;
+    flex: 0 0 auto;
+    order: 2;
+  }
+
+  .json-display {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+
   .chart-box {
-    padding: 1.25rem;
+    padding: 1rem;
+    flex: 1;
+    min-height: 300px;
+    order: 1;
   }
 
   .box-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .control-row {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .form-group label {
+    display: none;
+  }
+
+  .form-select {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .button-group {
+    gap: 0;
+    flex: 0 0 auto;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .purchase-btn,
+  .reset-btn {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .reset-btn {
+    display: none;
   }
 
   .chart-wrapper svg {
